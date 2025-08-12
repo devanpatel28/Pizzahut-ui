@@ -1,0 +1,2844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizza Hut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      color: white;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow-x: none;
+
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .bg-container {
+      background-color: #1c1c1c;
+      background: url("img/bg-1.jpg") no-repeat center center/cover;
+      /* min-height: 100vh; */
+    }
+
+    .highlight-discount {
+      color: black;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+    }
+
+    .order-btn {
+      background-color: #f72c57 !important;
+      border: none;
+      width: 100%;
+      max-width: 212px;
+      height: 65px;
+      border-radius: 9px;
+      margin-bottom: 25px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+      font-size: clamp(16px, 2.5vw, 17px);
+    }
+
+    .order-btn2 {
+      background-color: #FFFFFF !important;
+      border: none;
+      width: 100%;
+      max-width: 212px;
+      height: 65px;
+      border-radius: 9px;
+      margin-bottom: 25px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+      font-size: clamp(16px, 2.5vw, 17px);
+    }
+
+    .navbar-brand img {
+      height: 67px;
+      max-width: 100%;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 1920px;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .navbar {
+      height: auto;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-family: "Fugaz One", cursive;
+      align-self: anchor-center;
+      font-weight: normal;
+      font-size: clamp(20px, 3vw, 24px);
+      color: #f72c57 !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-item .nav-link {
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+      color: #333 !important;
+      font-size: clamp(14px, 2vw, 16px);
+    }
+
+    .contact-us {
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+      font-size: clamp(14px, 2vw, 17px);
+      color: #fff !important;
+      background-color: #ffc222 !important;
+      border: none;
+      border-radius: 7px;
+      width: 182px;
+      max-width: 182px;
+      height: 57px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .divider {
+      width: 45px;
+      max-width: 100%;
+      display: none;
+    }
+
+    .basket-wrap {
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .count {
+      position: absolute;
+      top: -7px;
+      right: -5px;
+      background-color: #1c1c1c;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 9px;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    .offer {
+      font-family: "Oregano", cursive;
+      font-size: 28px;
+    }
+
+    h1 {
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      color: #fff !important;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      color: #fff !important;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .emailForm {
+      width: 100%;
+      max-width: 450px;
+      height: 64px;
+      border-radius: 50px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .subscribe-input {
+      font-family: "Lato", sans-serif;
+      width: 100%;
+      max-width: 252px;
+      height: 64px;
+      border-radius: 50px;
+      background-color: transparent;
+      border: none;
+      font-size: clamp(14px, 2vw, 16px);
+      padding-left: 10px;
+    }
+
+    .subscribe-btn {
+      color: #fff;
+      font-family: "Quicksand", sans-serif;
+      font-size: clamp(14px, 2vw, 16px);
+      height: 64px;
+      width: 100%;
+      max-width: 150px;
+      background-color: #ef294c;
+      border: none;
+      border-radius: 50px;
+    }
+
+    .paint-bg {
+      background-color: #ef294c;
+      -webkit-mask: url("img/paint.png") no-repeat center center/cover;
+      mask: url("img/paint.png") no-repeat center center/cover;
+      width: 769px;
+      max-width: 700px;
+      height: 254px;
+      max-height: 235px;
+      padding-left: 100px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .highlight-discount .paint-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-120%, -70%);
+      z-index: 1;
+    }
+
+    .part1 {
+      width: 100%;
+      height: auto;
+      display: grid;
+      height: 572px;
+      align-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(10px, 406px));
+      gap: 30px;
+      padding: 20px 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tempBox1,
+    .tempBox2,
+    .tempBox3 {
+      background: no-repeat center center/cover;
+      width: 100%;
+      max-width: 406px;
+      height: 331px;
+      border-radius: 9px;
+      margin: 0 auto;
+    }
+
+    .tempBox1 {
+      background-image: url("img/food-bg/bg-1.png");
+    }
+
+    .tempBox2 {
+      background-image: url("img/food-bg/bg-2.png");
+    }
+
+    .tempBox3 {
+      background-image: url("img/food-bg/bg-3.png");
+    }
+
+    .burger-bg {
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      width: 123px;
+      height: 127px;
+      max-width: 30%;
+    }
+
+    .side-text {
+      font-family: 'Oswald', sans-serif;
+      color: #00A149;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: start
+    }
+
+    .mainText1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .mainText2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+    }
+
+    .part2 {
+      width: 100%;
+      height: auto;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 2%;
+    }
+
+    .pizza-img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .side-part {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 5%;
+      width: 50%;
+    }
+
+
+
+    .side-text {
+      font-family: 'Oswald', sans-serif;
+      color: #00A149;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .sideText1 {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+    .about-our-food-heading {
+      font-family: 'Oswald', sans-serif;
+      color: #00A149;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .about-our-food-sub-heading {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+    .sideText2 {
+      width: 76%;
+      font-family: 'Oswald', sans-serif;
+      color: #5C5C5B;
+      font-size: 17px;
+      font-weight: 400;
+      margin-top: 5%;
+    }
+
+    .box-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin-top: 5%;
+    }
+
+    .box1 {
+      width: 30%;
+      height: 124px;
+      border-top: 2px solid #D9D9D9;
+    }
+
+    .box2 {
+      width: 30%;
+      height: 124px;
+      border: 2px solid #D9D9D9;
+      border-bottom: transparent !important;
+    }
+
+    .box3 {
+      width: 30%;
+      height: 124px;
+      border-top: 2px solid #D9D9D9;
+    }
+
+    .box-in-text1 {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .box-in-text2 {
+      font-family: 'Oswald', sans-serif;
+      color: #FFC222;
+      font-size: 50px;
+      font-weight: 700;
+    }
+
+    .foundation {
+      width: 100%;
+      max-width: 450px;
+      height: 36px;
+      border-radius: 100px;
+      background-color: #212121;
+      font-family: 'Oswald', sans-serif;
+      color: #fff;
+    }
+
+    .sign-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    .sign-img {
+      width: 20%;
+      height: auto;
+    }
+
+    .grey-box {
+      background: url("img/grey-bg-design.png") no-repeat center center/cover;
+      background-color: #F3F3F3;
+      width: 1290px;
+      height: 785px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .item-list {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .founder-tagline {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 3%;
+    }
+
+    .selection-btn-checked {
+      width: auto;
+      height: 54px;
+      border-radius: 40px;
+      background-color: #FFC222;
+      border: 1px solid #FFC222;
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 36px;
+    }
+
+    .selection-btn-unchecked {
+      width: auto;
+      height: 54px;
+      border-radius: 40px;
+      background-color: transparent;
+      border: 1px solid #D9D9D9;
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 36px;
+    }
+
+    .food-detail {
+      display: flex;
+      width: 250px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .food-list {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .foodImg {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .foodName {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .foodInfo {
+      font-family: 'Oswald', sans-serif;
+      color: #5C5C5B;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .bg2 {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    .delivery-bg {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background: url("img/tomato-chili.png") no-repeat center center/contain;
+      background-color: #EF294C;
+    }
+
+    .deliverymanImg {
+      width: 412px;
+      height: 347px;
+      transform: translateY(-15%);
+    }
+
+    .deliverySideText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      width: 30%;
+    }
+
+    .offerDetails {
+      display: flex;
+      flex-direction: row;
+      height: 869px;
+      width: auto;
+    }
+
+    .offer-container {
+      width: 100%;
+      height: 869px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .offer-box1 {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+    }
+
+    .offer-container-2 {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .offer-container-2 img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
+
+    .menu-heading {
+      font-family: 'Oswald', sans-serif;
+      color: #00A149;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .menu-sub-heading {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 60px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .foodMenu {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: center;
+      padding-top: 5%;
+    }
+
+    .foodMenu2 {
+      width: auto;
+      height: 950px;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menuCard {
+      width: 100%;
+      max-width: 1290px;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: auto;
+      border: 1px dashed #5C5C5B;
+      border-radius: 13px;
+      margin-top: 1%;
+      padding: 2% 0 2%;
+    }
+
+    .itemName {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .itemInfo {
+      font-family: 'Oswald', sans-serif;
+      color: #5C5C5B;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .menu-part {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .itemPrice {
+      justify-content: center;
+      align-self: center;
+      padding-left: 5%;
+      font-family: 'Oswald', sans-serif;
+      color: #FFC222;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .item {
+      width: 587px;
+      height: 127px;
+      border-bottom: 1px dashed #5C5C5B;
+    }
+
+    .foodSlider {
+      position: relative;
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 5% 0 5%;
+    }
+
+    .foodImg {
+      display: inline;
+      height: auto;
+    }
+
+    .food-images {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 2%;
+      width: auto;
+    }
+
+    .arr-left,
+    .arr-right {
+      height: auto;
+      width: 50px;
+    }
+
+    .arr-left {
+      left: 10%;
+    }
+
+    .arr-right {
+      right: 10%;
+      transform: rotate(180deg);
+    }
+
+    .about-food-img {
+      width: 864px;
+      height: auto;
+      object-fit: cover;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+
+    .about-section {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: end;
+      margin-bottom: 15%;
+    }
+
+    .about-section-parts {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: start;
+      background-color: #fff;
+    }
+
+    .reputation-detail {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .about-info {
+      width: 40%;
+      height: 87%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    }
+
+    .about-side-text {
+      font-family: 'Oswald', sans-serif;
+      color: #F3274C;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .pink-clr {
+      color: #F3274C;
+    }
+
+    .about-itemInfo {
+      width: 80%;
+      font-family: 'Oswald', sans-serif;
+      color: #5C5C5B;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .more-about-us-btn {
+      width: 210px;
+      height: 65.5px;
+      border-radius: 9px;
+      border: none;
+      background-color: #F3274C;
+      font-family: 'Oswald', sans-serif;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-text {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .inner-bg {
+      top: 166px;
+      width: 100%;
+      height: 100%;
+      background-color: #F4F1EA;
+    }
+
+    .inner-bg-text {
+      position: absolute;
+      top: 25%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .innerTextCenter {
+      background-color: #fff;
+      border-radius: 17px;
+      border: 1px dashed #5C5C5B;
+      width: 414px;
+      height: 260px;
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .innerTextCenter-info {
+      width: 80%;
+      font-family: 'Oswald', sans-serif;
+      color: #5C5C5B;
+      font-size: 17px;
+      font-weight: 400;
+      margin-top: 2%;
+      text-align: center;
+    }
+
+    .innerTextSides {
+      width: 414px;
+      height: 260px;
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dashed-line-right {
+      width: 100%;
+      height: 100%;
+      transform: translate(-85%, -40%);
+      border-top: 1px dashed #5C5C5B;
+    }
+
+    .dashed-line-left {
+      width: 100%;
+      height: 100%;
+      transform: translate(55%, -40%);
+      border-top: 1px dashed #5C5C5B;
+    }
+
+    .founder-section {
+      background: url("img/grey-bg-design-2.png") no-repeat center center/contain;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .founder-name {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 29px;
+      font-weight: 600;
+    }
+
+    .founder-info {
+      width: 105%;
+      margin-top: 3%;
+      display: flex;
+      /* background-color: blue; */
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 34px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .founder-part {
+      /* background-color: aqua; */
+      width: 742px;
+      height: 643px;
+      margin-left: 4%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .founder-img {
+      width: auto;
+      height: 523px;
+      object-fit: cover;
+      align-self: center;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .checked {
+      color: #FFC222;
+    }
+
+    .stepper-container {
+      width: 146px;
+      height: 41px;
+      display: inline-flex;
+      align-items: center;
+      padding-inline: 20px;
+      justify-content: space-evenly;
+      border: 1px dotted #5C5C5BE5;
+      opacity: 0.9;
+      border-radius: 999px;
+      background-color: transparent;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #5C5C5B;
+      position: relative;
+    }
+
+
+    .dot.active {
+      background-color: #00A149;
+    }
+
+
+    .dot.active::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      background-color: transparent;
+      border-radius: 50%;
+      border: 2px solid #00A149;
+    }
+
+    .news-section {
+      width: 100%;
+      height: auto;
+      background: url("img/grey-bg-design-3.png") no-repeat center center/contain;
+      margin-bottom: 5%;
+    }
+
+    .news-heading {
+      font-family: 'Oswald', sans-serif;
+      color: #00A149;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .news-section-text {
+      margin-top: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 100%;
+      background-color: #F4F4F4;
+      border-radius: 20px;
+    }
+
+    .blog-imgs {
+      border-radius: 20px;
+    }
+
+    .news-details {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .news-date {
+      display: flex;
+      font-family: 'Oswald', sans-serif;
+      font-size: 17px;
+      width: 354px;
+      height: 49px;
+      color: #212121;
+      font-weight: 600;
+      align-items: start;
+      border-bottom: 1px solid #00A149;
+    }
+
+    .news-title {
+      width: 90%;
+      height: auto;
+      margin-top: 3%;
+      color: #212121;
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .news-list {
+      width: 100%;
+      padding: 2% 0 2%;
+      display: inline-flex;
+      gap: 2%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .news-info {
+      width: 90%;
+      height: auto;
+      color: #5C5C5B;
+      font-family: 'Oswald', sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .news-sub-heading {
+      font-family: 'Oswald', sans-serif;
+      color: #212121;
+      font-size: 6vh;
+      font-weight: 700;
+    }
+
+    .foods-images {
+      display: flex;
+      flex-direction: row;
+      font-size: 0;
+      width: 100%;
+      height: auto;
+    }
+
+    .foods-images img {
+      width: 20%;
+    }
+
+
+    .last-section {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding-top: 5%;
+      background-color: #F5F8FD;
+
+    }
+
+    .last-sec-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      object-fit: contain;
+      z-index: 0;
+    }
+
+    .last-sec-text {
+      width: 1300px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+      z-index: 1;
+    }
+
+    .last-sec-row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-between;
+    }
+
+    .pizzahut-details {
+      width: 390px;
+      height: 365px;
+      border-radius: 30px;
+      background-color: #F3274C;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .pizzahut-title {
+      padding-left: 45px;
+      font-family: "Fugaz One", cursive;
+      font-size: 24px;
+      font-weight: 400;
+      color: #FFFFFF;
+    }
+
+    .pizzahut-sub-title {
+      padding-left: 60px;
+      transform: translateY(-5px);
+      font-family: "Fugaz One", cursive;
+      font-size: 10px;
+      font-weight: 400;
+      color: #FFFFFF;
+    }
+
+    .pizzahut-timing {
+      padding-left: 45px;
+      font-family: "Fredoka", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #FFFFFF;
+    }
+
+    .about-title {
+      width: fit-content;
+      font-family: "Fredoka", sans-serif;
+      font-weight: 600;
+      font-size: 26px;
+      color: #000000;
+      border-bottom: 5px solid #FFD40D;
+    }
+
+    /* .about-details{
+      margin-left: 2%;
+    } */
+
+    .about-details ul {
+      list-style-type: none;
+      padding-left: 0;
+      padding-top: 30%;
+    }
+
+    .about-details li {
+      font-family: "Epilogue", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #333333;
+      margin-top: 10%;
+    }
+
+
+
+    .about-details li::before {
+      content: '>';
+      margin-right: 12px;
+      color: #000000;
+    }
+
+    .newsletter-container {
+      font-family: "Epilogue", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #333333;
+      margin-top: 12%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .newsletter-input {
+      background-color: #FFFFFF;
+      width: 360px;
+      height: 63px;
+      margin-top: 5%;
+      border: none;
+      border-radius: 10px;
+      border: 1px solid #DEDEDE;
+      padding-left: 10%;
+      display: flex;
+      align-items: center;
+    }
+
+    .newsletter-subscribe-btn {
+      margin-top: 10%;
+      width: 159px;
+      height: 60px;
+      border: none;
+      border-radius: 12px;
+      background-color: #F3274C;
+      font-family: "Fredoka", sans-serif;
+      font-weight: 600;
+      color: #FFFFFF;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .newsletter-subscribe-btn::after {
+      content: '';
+      position: absolute;
+      width: 151px;
+      height: 72px;
+      transform: translateX(10px);
+      border-radius: 12px;
+      background-color: transparent;
+      border: 3px solid #F3274C;
+    }
+
+    .last-box {
+      width: 100%;
+      height: 93px;
+      margin-top: 100px;
+      margin-bottom: 15px;
+      border-top: 10px solid #FFD40D;
+      font-family: "Fredoka", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #000000;
+      display: flex;
+      align-items: center;
+
+    }
+
+    .last-details {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .copyright-tag {
+      font-family: "Fugaz One", cursive;
+      font-weight: 400;
+      color: #EF294C;
+    }
+
+    .social-links {
+      color: #000000;
+    }
+
+    /* Tablet View (max-width: 1200px) */
+    @media (max-width: 1200px) {
+      .container {
+        max-width: 100%;
+        padding: 0 15px;
+      }
+
+      .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: calc(10px);
+      }
+
+      .navbar-brand img {
+        height: 60px;
+      }
+
+      .navbar {
+        padding: 10px 15px;
+      }
+
+      .contact-us {
+        width: 150px;
+        height: 50px;
+        font-size: clamp(12px, 1.8vw, 14px);
+        margin: 10px auto;
+      }
+
+      .mainText1,
+      .mainText2,
+      .offer,
+      .order-btn,
+      .emailForm {
+        margin-left: 10%;
+      }
+
+      .mainText2 {
+        font-size: clamp(40px, 6vw, 50px);
+      }
+
+      .offer {
+        font-size: clamp(20px, 3vw, 24px);
+      }
+
+      .order-btn,
+      .order-btn2 {
+        max-width: 180px;
+        height: 55px;
+        font-size: clamp(14px, 2vw, 15px);
+      }
+
+      .emailForm {
+        max-width: 350px;
+        height: 50px;
+      }
+
+      .subscribe-input {
+        max-width: 200px;
+        font-size: clamp(12px, 1.8vw, 14px);
+      }
+
+      .subscribe-btn {
+        max-width: 120px;
+        height: 50px;
+        font-size: clamp(12px, 1.8vw, 14px);
+      }
+
+      .part1 {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+        padding: 15px;
+      }
+
+      .sideText1 {
+        font-size: clamp(30px, 5vw, 40px);
+      }
+
+      .part2 {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .part2-section {
+        width: 100%;
+      }
+
+      .sideText2 {
+        width: 100%;
+      }
+
+      .box-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box1,
+      .box2,
+      .box3 {
+        width: 100%;
+        margin-top: 2%;
+        justify-content: center;
+        border: none;
+        border-top: 1px solid #5C5C5B;
+      }
+
+      .box-in-text2 {
+        text-align: center;
+      }
+
+      .about-our-food-heading {
+        margin-top: 10%;
+      }
+
+      .about-our-food-heading,
+      .about-our-food-sub-heading {
+        text-align: center;
+      }
+
+      .sign-img {
+        width: 50%;
+      }
+
+      .sign-row {
+        flex-direction: column;
+      }
+
+      .grey-box {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
+
+      .food-detail {
+        width: 200px;
+      }
+
+      .foodName {
+        font-size: 20px;
+      }
+
+      .foodInfo {
+        font-size: 14px;
+      }
+
+      .delivery-bg {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+      }
+
+      .deliverySideText {
+        width: 80%;
+        text-align: center;
+      }
+
+      .deliverymanImg {
+        width: 300px;
+        height: auto;
+        transform: none;
+      }
+
+      .offerDetails {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+      }
+
+      .foodSlider {
+        overflow: scroll;
+      }
+
+      .arr-left,
+      .arr-right {
+        display: none;
+      }
+
+      .food-list {
+        flex-direction: column;
+
+      }
+
+      .news-list {
+        overflow: scroll;
+      }
+
+
+      .offer-container {
+        width: 100%;
+        height: 500 px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .offer-box1 {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .offer-container-2 {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .offer-container-2 img {
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+      }
+
+      .food-proccessing {
+        flex-direction: column;
+      }
+
+      .menuCard {
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        padding: 20px;
+      }
+
+      .item {
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+      }
+
+
+      .about-section {
+        padding: 2%;
+      }
+
+      .about-info {
+        width: 100%;
+        margin-top: 20px;
+        /* text-align: center; */
+        align-items: center;
+      }
+
+      .about-food-img {
+        width: 100%;
+        max-width: 600px;
+        border-top-left-radius: 50px;
+      }
+
+      .side-text {
+        margin-top: 0%;
+      }
+
+      .inner-bg {
+        height: 1000px;
+        width: 100%;
+
+      }
+
+      .inner-bg-text {
+        top: 0;
+
+      }
+
+      .innerTextCenter,
+      .innerTextSides {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        padding: 15px;
+      }
+
+      .dashed-line-right,
+      .dashed-line-left {
+        display: none;
+      }
+
+      .founder-section {
+        flex-direction: row;
+        height: auto;
+        padding: 20px;
+      }
+
+      .founder-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+
+      .founder-part {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .founder-info {
+        width: 100%;
+        font-size: clamp(24px, 4vw, 28px);
+      }
+
+      .news-section {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
+
+      .news-section-text {
+        width: 100%;
+        height: auto;
+      }
+
+      .news-card {
+        width: 100%;
+        max-width: 320px;
+
+      }
+
+      .news-date {
+        width: 100%;
+        padding-left: 10px;
+      }
+
+      .news-title {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .news-info {
+        width: 100%;
+        padding: 5px;
+      }
+
+      .foods-images {
+        overflow: scroll;
+      }
+      .foods-images img{
+        width: 50%;
+      }
+
+      .last-sec-text {
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .pizzahut-details {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        padding: 20px;
+      }
+
+      .newsletter-input {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+
+      .paint-bg,
+      .discount-badge,
+      .burger-bg {
+        display: none;
+      } 
+      .foodSlider,
+      .news-list,
+      .foods-images {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    }
+
+
+
+    /* Small Mobile View (max-width: 576px) */
+    @media (max-width: 576px) {
+      .navbar-brand img {
+        height: 30px;
+      }
+
+      .endNav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .divider {
+        display: block;
+        cursor: pointer;
+      }
+
+      .center {
+        display: none;
+        width: 100%;
+        background-color: #fff;
+      }
+
+      .center.show {
+        display: block;
+      }
+
+      .center .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      .center .nav-item {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+      }
+
+      .mainText2 {
+        font-size: clamp(24px, 4vw, 28px);
+      }
+
+      .offer {
+        font-size: 18px;
+      }
+
+      .order-btn,
+      .order-btn2 {
+        max-width: 140px;
+        height: 40px;
+        font-size: 12px;
+      }
+
+      .emailForm {
+        max-width: 80%;
+        height: 40px;
+      }
+
+      .subscribe-input {
+        max-width: 80%;
+        height: 100%;
+        font-size: 10px;
+      }
+
+      .subscribe-btn {
+        max-width: 80px;
+        max-height: 40px;
+        font-size: 10px;
+      }
+
+      .part1 {
+        width: 100%;
+        height: auto;
+      }
+
+      .sideText1 {
+        font-size: clamp(20px, 3.5vw, 24px);
+      }
+
+      .part2 {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .part2-section {
+        width: 100%;
+      }
+
+      .sideText2 {
+        width: 100%;
+      }
+
+      .box-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box1,
+      .box2,
+      .box3 {
+        width: 100%;
+        margin-top: 2%;
+        justify-content: center;
+        border: none;
+        border-top: 1px solid #5C5C5B;
+      }
+
+      .box-in-text2 {
+        text-align: center;
+      }
+
+      .about-our-food-heading {
+        margin-top: 10%;
+      }
+
+      .menu-sub-heading,
+      .news-sub-heading,
+      .about-our-food-sub-heading {
+        font-size: x-large;
+      }
+
+      .about-our-food-heading,
+      .news-sub-heading,
+      .about-our-food-sub-heading {
+        text-align: center;
+      }
+
+      .sign-img {
+        width: 50%;
+      }
+
+      .sign-row {
+        flex-direction: column;
+      }
+
+
+
+
+      .selection-btn-checked {
+        width: fit-content;
+        height: 54px;
+        border-radius: 40px;
+        background-color: #FFC222;
+        border: 1px solid #FFC222;
+        font-family: 'Oswald', sans-serif;
+        color: #212121;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .selection-btn-unchecked {
+        width: fit-content;
+        height: 54px;
+        border-radius: 40px;
+        background-color: transparent;
+        border: 1px solid #D9D9D9;
+        font-family: 'Oswald', sans-serif;
+        color: #212121;
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 13px 36px;
+      }
+
+      .food-list {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .item-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .arr-left,
+      .arr-right {
+        display: none;
+      }
+
+      .food-images {
+        overflow: auto;
+        justify-content: flex-start;
+        gap: 5%;
+      }
+
+      .foodImg {
+        max-width: 100%;
+      }
+
+      .founder-section {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+      }
+
+      .founder-img {
+        margin-top: 20px;
+      }
+
+      .news-list {
+        justify-content: flex-start;
+        gap: 4%;
+        overflow: scroll;
+      }
+
+      .food-detail {
+        max-width: 100%;
+      }
+
+      .deliverymanImg {
+        width: 150px;
+      }
+
+      .offer-container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .offer-box1 {
+        width: 100%;
+        height: auto;
+      }
+
+      .offer-container-2 {
+        width: 100%;
+        height: auto;
+      }
+
+      .offer-container-2 img {
+        width: 100%;
+        height: auto;
+      }
+
+      .founder-info {
+        font-size: clamp(20px, 3.5vw, 24px);
+      }
+
+      .news-title {
+        font-size: 24px;
+      }
+
+      .news-info {
+        font-size: 14px;
+      }
+
+      .last-sec-row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .foods-images {
+        overflow: scroll;
+      }
+
+      .pizzahut-title {
+        font-size: 20px;
+      }
+
+      .pizzahut-timing {
+        font-size: 14px;
+      }
+
+
+      .about-section-parts {
+
+        flex-direction: column-reverse;
+        justify-content: end;
+        align-items: start;
+        background-color: #fff;
+      }
+
+      .reputation-detail {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-title {
+        font-size: 22px;
+      }
+
+      .about-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-details li {
+        font-size: 16px;
+      }
+
+      .founder-tagline {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        margin-top: 5%;
+      }
+
+      .delivery-bg {
+        flex-direction: column;
+      }
+
+      .deliverySideText {
+        align-items: center;
+      }
+
+      .deliverymanImg {
+        height: auto;
+        transform: none;
+        margin-top: 3%;
+      }
+
+      .news-section {
+        background: none;
+        margin: 0;
+      }
+
+      .newsletter-input {
+        height: 50px;
+        font-size: 14px;
+      }
+
+      .newsletter-subscribe-btn {
+        width: 120px;
+        height: 50px;
+        font-size: 14px;
+      }
+
+      .newsletter-subscribe-btn::after {
+        content: '';
+        position: absolute;
+        width: 115px;
+        height: 65px;
+        transform: translateX(11px);
+        border-radius: 12px;
+        background-color: transparent;
+        border: 3px solid #F3274C;
+      }
+
+      .paint-bg,
+      .discount-badge,
+      .burger-bg,
+      .last-sec-img {
+        display: none;
+      }
+
+      .item {
+        width: 100%;
+        padding: 5% 5%;
+      }
+
+      .menuCard {
+        flex-direction: column;
+      }
+
+      .foods-images img {
+        width: 100%;
+      }
+
+      .pizzahut-details {
+        width: 100%;
+        max-width: 350px;
+        height: 300px;
+        padding: 20px;
+      }
+
+      .last-details {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .foodSlider,
+      .news-list,
+      .foods-images {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('show');
+    }
+  </script>
+  <div class="navbar navbar-expand-lg bg-white">
+    <div class="main">
+      <a class="navbar-brand" href="#">
+        <img src="img/pizzahut_logo.png" alt="Pizza Hut Logo" />
+        Pizza Hut
+      </a>
+      <div class="center" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Shop
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" >
+              Blog
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Pages
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="endNav">
+        <span class="basket-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#00A149" class="bi bi-basket"
+            viewBox="0 0 16 16">
+            <path
+              d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7z" />
+          </svg>
+          <span class="count">0</span>
+        </span>
+        <button class="contact-us" href="#">Contact Us</button>
+        <img class="divider" src="img/divider-btn.png" alt="Divider" onclick="toggleMenu()" />
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-container">
+    <section class="d-flex align-items-center" style="min-height: 90vh">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-6 text-white">
+            <p class="mainText1 mb-1">Starting at <strong>$24.00</strong></p>
+            <h1 class="mainText2 fw-bold">
+              The best Food<br />Collection 2024
+            </h1>
+            <p class="offer">
+              Exclusive offer
+              <span style="color: #ffd43a">-35% off</span> this week
+            </p>
+            <button href="#" class="btn order-btn text-white px-4 py-2 mt-5">
+              <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.565 11.24C17.7117 11.24 16.9917 11.5467 16.405 12.16C15.8183 12.7733 15.525 13.4933 15.525 14.32C15.525 15.1467 15.8183 15.8533 16.405 16.44C16.9917 17.0267 17.6983 17.32 18.525 17.32C19.3517 17.32 20.0583 17.0267 20.645 16.44C21.2317 15.8533 21.525 15.1467 21.525 14.32C21.525 13.4933 21.2317 12.7733 20.645 12.16C20.0583 11.5467 19.365 11.24 18.565 11.24ZM18.565 15.8C18.1383 15.8 17.7783 15.6533 17.485 15.36C17.1917 15.0667 17.045 14.7067 17.045 14.28C17.045 13.8533 17.1917 13.4933 17.485 13.2C17.7783 12.9067 18.125 12.76 18.525 12.76C18.925 12.76 19.2717 12.9067 19.565 13.2C19.8583 13.4933 20.005 13.8533 20.005 14.28C20.005 14.7067 19.8583 15.0667 19.565 15.36C19.2717 15.6533 18.9383 15.8 18.565 15.8ZM8.165 11.24C7.365 11.24 6.67167 11.5467 6.085 12.16C5.49833 12.7733 5.205 13.4933 5.205 14.32C5.205 15.1467 5.49833 15.8533 6.085 16.44C6.67167 17.0267 7.37833 17.32 8.205 17.32C9.03166 17.32 9.73833 17.0267 10.325 16.44C10.9117 15.8533 11.205 15.1467 11.205 14.32C11.205 13.4933 10.9117 12.7733 10.325 12.16C9.73833 11.5467 9.01833 11.24 8.165 11.24ZM8.165 15.8C7.79167 15.8 7.445 15.6533 7.125 15.36C6.805 15.0667 6.645 14.7067 6.645 14.28C6.645 13.8533 6.805 13.4933 7.125 13.2C7.445 12.9067 7.805 12.76 8.205 12.76C8.605 12.76 8.95166 12.9067 9.245 13.2C9.53833 13.4933 9.685 13.8533 9.685 14.28C9.685 14.7067 9.53833 15.0667 9.245 15.36C8.95166 15.6533 8.59167 15.8 8.165 15.8ZM20.565 2.60001C20.405 2.33334 20.1917 2.20001 19.925 2.20001H15.925V3.72001H19.445L21.525 7.80001L22.805 7.16001L20.565 2.60001ZM10.565 13.56H16.245V15.08H10.565V13.56ZM5.925 13.56H3.285C3.07167 13.56 2.89833 13.64 2.765 13.8C2.63167 13.96 2.565 14.1333 2.565 14.32C2.565 14.5067 2.63167 14.68 2.765 14.84C2.89833 15 3.07167 15.08 3.285 15.08H5.925C6.13833 15.08 6.31167 15 6.445 14.84C6.57833 14.68 6.645 14.5067 6.645 14.32C6.645 14.1333 6.57833 13.96 6.445 13.8C6.31167 13.64 6.13833 13.56 5.925 13.56ZM24.245 8.92001L22.725 7.00001C22.6183 6.84001 22.4317 6.76001 22.165 6.76001H16.645V1.40001C16.645 1.24001 16.5783 1.08001 16.445 0.920008C16.3117 0.760008 16.1383 0.680008 15.925 0.680008H3.285C3.07167 0.680008 2.89833 0.760008 2.765 0.920008C2.63167 1.08001 2.565 1.25334 2.565 1.44001C2.565 1.62667 2.63167 1.80001 2.765 1.96001C2.89833 2.12001 3.07167 2.20001 3.285 2.20001H15.125V7.48001C15.125 7.69334 15.205 7.88001 15.365 8.04001C15.525 8.20001 15.7117 8.28001 15.925 8.28001H21.765L22.885 9.64001V13.56H20.805C20.5917 13.56 20.405 13.64 20.245 13.8C20.085 13.96 20.005 14.1333 20.005 14.32C20.005 14.5067 20.085 14.68 20.245 14.84C20.405 15 20.5917 15.08 20.805 15.08H23.685C23.845 15.08 24.005 15 24.165 14.84C24.325 14.68 24.405 14.4933 24.405 14.28V9.40001C24.405 9.24001 24.3517 9.08001 24.245 8.92001ZM5.845 9.72001H2.405C2.19167 9.72001 2.005 9.80001 1.845 9.96001C1.685 10.12 1.605 10.3067 1.605 10.52C1.605 10.7333 1.685 10.9067 1.845 11.04C2.005 11.1733 2.19167 11.24 2.405 11.24H5.845C6.05833 11.24 6.245 11.1733 6.405 11.04C6.565 10.9067 6.645 10.7333 6.645 10.52C6.645 10.3067 6.565 10.12 6.405 9.96001C6.245 9.80001 6.05833 9.72001 5.845 9.72001ZM7.605 6.76001H1.125C0.964999 6.76001 0.804999 6.82667 0.644999 6.96001C0.484999 7.09334 0.404999 7.26667 0.404999 7.48001C0.404999 7.69334 0.484999 7.88001 0.644999 8.04001C0.804999 8.20001 0.964999 8.28001 1.125 8.28001H7.605C7.81833 8.28001 8.005 8.20001 8.165 8.04001C8.325 7.88001 8.405 7.69334 8.405 7.48001C8.405 7.26667 8.325 7.09334 8.165 6.96001C8.005 6.82667 7.81833 6.76001 7.605 6.76001ZM8.885 3.80001H2.405C2.19167 3.80001 2.005 3.86667 1.845 4.00001C1.685 4.13334 1.605 4.30667 1.605 4.52001C1.605 4.73334 1.685 4.92001 1.845 5.08001C2.005 5.24001 2.19167 5.32001 2.405 5.32001H8.885C9.045 5.32001 9.205 5.24001 9.365 5.08001C9.525 4.92001 9.605 4.73334 9.605 4.52001C9.605 4.30667 9.525 4.13334 9.365 4.00001C9.205 3.86667 9.045 3.80001 8.885 3.80001Z"
+                  fill="white" />
+              </svg>
+              Order Now
+            </button>
+
+            <div class="emailForm mt-4">
+              <form class="d-flex w-100 justify-content-center align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#838383" style="margin-left: 20px"
+                  class="bi bi-mailbox" viewBox="0 0 15 15">
+                  <path
+                    d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3m0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m2.646 1A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3z" />
+                  <path
+                    d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0" />
+                </svg>
+                <input type="email" class="form-control subscribe-input" placeholder="Enter your email" />
+                <button class="subscribe-btn ms-2" type="submit">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 text-center mt-4 mt-lg-0">
+            <div class="highlight-discount position-relative">
+              <div class="paint-bg"></div>
+              <img class="discount-badge" src="img/discount-badge.png" alt="discount badge" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="position-relative">
+    <div class="part1">
+      <div data-aos="fade-up" data-aos-delay="100" class="tempBox1"></div>
+      <div data-aos="fade-up" data-aos-delay="200" class="tempBox2"></div>
+      <div data-aos="fade-up" data-aos-delay="300" class="tempBox3"></div>
+    </div>
+
+    <img class="burger-bg" src="img/burger-bg.png" alt="Burger Background" />
+  </section>
+
+  <section class="position-relative">
+
+    <div class="part2">
+      <img data-aos="fade-up" src="img/food/pizza-1.png" class="pizza-img" alt="Pizza" />
+      <div data-aos="fade-up" class="part2-section px-5">
+        <div class="about-our-food-heading">About Our Food</div>
+        <h2 class="about-our-food-sub-heading">The Best Delicious Food <br> Made From Us...</h2>
+        <div class="sideText2">
+          It's the perfect dining experience where every dish is crafted
+          with fresh, high-quality ingredients. Experience quick and
+          efficient service that ensures your food is served fresh. Enjoy
+          a dining experience where every dish is crafted with fresh,
+          high-quality ingredients.
+        </div>
+        <div class="box-container">
+          <div class="d-flex box1">
+            <div class="box-text d-flex flex-column justify-content-end align-items-start">
+              <span class="box-in-text1">Satsified Clients</span>
+              <span class="box-in-text2">250+</span>
+            </div>
+          </div>
+          <div class="d-flex box2 justify-content-center">
+            <div class="box-text d-flex flex-column justify-content-end align-items-start">
+              <span class="box-in-text1">Total food catagories</span>
+              <span class="box-in-text2">153+</span>
+            </div>
+          </div>
+          <div class="d-flex box3 justify-content-center">
+            <div class="box-text d-flex flex-column justify-content-end align-items-start">
+              <span class="box-in-text1">Award win</span>
+              <span class="box-in-text2">25+</span>
+            </div>
+          </div>
+        </div>
+        <div class="sign-row mt-5 d-flex justify-content-start gap-4 align-items-center">
+          <img src="img/sign.png" alt="Sign" class="sign-img">
+          <div class="foundation d-flex justify-content-center align-items-center">
+            Foundation, since <strong class="text-warning"> 21st </strong> Oct , 2019
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative">
+    <div data-aos="fade-up" data-aos-delay="200" class="container d-flex justify-content-center">
+      <div class="grey-box d-flex flex-column">
+        <div class="side-text">About Our Food</div>
+        <div class="sideText1">Hot Delicious Item</div>
+        <div class="item-list position-relative mt-3">
+          <div data-aos="zoom-in" data-aos-delay="100" class="d-block selection-btn-checked">
+            Chicken Fry
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="200" class="d-block selection-btn-unchecked">
+            Pizza
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="300" class="d-block selection-btn-unchecked">
+            Burger
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="400" class="d-block selection-btn-unchecked">
+            Deserts
+          </div>
+        </div>
+        <div class="food-list mt-5 gap-5">
+
+          <div data-aos="zoom-in-up" data-aos-delay="100" class="food-detail">
+            <div class="foodImg">
+              <img src="img/food/pizza-3.png" class="imgfood" alt="Food 1" />
+            </div>
+            <div class="foodText">
+              <div class="foodName">Chicago Deep Pizza.</div>
+              <div class="foodInfo">Its the perfect dining experience where Experience quick and efficient</div>
+            </div>
+          </div>
+          <div data-aos="zoom-in-up" data-aos-delay="100" class="food-detail">
+            <div class="foodImg">
+              <img src="img/food/potatochips-1.png" alt="Food 2" />
+            </div>
+            <div class="foodText">
+              <div class="foodName">FAST FOOD COMBO</div>
+              <div class="foodInfo">Its the perfect dining experience where Experience quick and efficient</div>
+            </div>
+          </div>
+          <div data-aos="zoom-in-up" data-aos-delay="100" class="food-detail">
+            <div class="foodImg">
+              <img src="img/food/chicken-1.png" alt="Food 3" />
+            </div>
+            <div class="foodText">
+              <div class="foodName">GRILLED CHICKEN</div>
+              <div class="foodInfo">Its the perfect dining experience where Experience quick and efficient</div>
+            </div>
+          </div>
+          <div data-aos="zoom-in-up" data-aos-delay="100" class="food-detail">
+            <div class="foodImg">
+              <img src="img/food/cheeseburger-1.png" alt="Food 4" />
+            </div>
+            <div class="foodText">
+              <div class="foodName">WHOPPER BURGER KING</div>
+              <div class="foodInfo">Its the perfect dining experience where Experience quick and efficient</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+  </section>
+
+  <section class="position-relative">
+    <!-- <div class="bg2 d-flex justify-content-center align-items-center"></div> -->
+    <img data-aos="fade-up" src="img/bg-2.png" alt="" class="img-fluid">
+    <div data-aos="fade-up" class="delivery-bg">
+      <div class="deliverySideText">
+        <div class="side-text text-warning">Crispy, Every Bite Taste</div>
+        <h2 class="sideText1 text-white">30 Minutes Fast <br> <strong class="text-warning"> Delivery </strong> Challenge
+        </h2>
+      </div>
+      <img src="img/deliveryman.png" alt="" class="deliverymanImg" />
+      <button href="#" class="btn order-btn2 text-dark py-2 mt-5">
+        <svg width="25" height="18" viewBox="0 0 25 18" fill="#00A149" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M18.565 11.24C17.7117 11.24 16.9917 11.5467 16.405 12.16C15.8183 12.7733 15.525 13.4933 15.525 14.32C15.525 15.1467 15.8183 15.8533 16.405 16.44C16.9917 17.0267 17.6983 17.32 18.525 17.32C19.3517 17.32 20.0583 17.0267 20.645 16.44C21.2317 15.8533 21.525 15.1467 21.525 14.32C21.525 13.4933 21.2317 12.7733 20.645 12.16C20.0583 11.5467 19.365 11.24 18.565 11.24ZM18.565 15.8C18.1383 15.8 17.7783 15.6533 17.485 15.36C17.1917 15.0667 17.045 14.7067 17.045 14.28C17.045 13.8533 17.1917 13.4933 17.485 13.2C17.7783 12.9067 18.125 12.76 18.525 12.76C18.925 12.76 19.2717 12.9067 19.565 13.2C19.8583 13.4933 20.005 13.8533 20.005 14.28C20.005 14.7067 19.8583 15.0667 19.565 15.36C19.2717 15.6533 18.9383 15.8 18.565 15.8ZM8.165 11.24C7.365 11.24 6.67167 11.5467 6.085 12.16C5.49833 12.7733 5.205 13.4933 5.205 14.32C5.205 15.1467 5.49833 15.8533 6.085 16.44C6.67167 17.0267 7.37833 17.32 8.205 17.32C9.03166 17.32 9.73833 17.0267 10.325 16.44C10.9117 15.8533 11.205 15.1467 11.205 14.32C11.205 13.4933 10.9117 12.7733 10.325 12.16C9.73833 11.5467 9.01833 11.24 8.165 11.24ZM8.165 15.8C7.79167 15.8 7.445 15.6533 7.125 15.36C6.805 15.0667 6.645 14.7067 6.645 14.28C6.645 13.8533 6.805 13.4933 7.125 13.2C7.445 12.9067 7.805 12.76 8.205 12.76C8.605 12.76 8.95166 12.9067 9.245 13.2C9.53833 13.4933 9.685 13.8533 9.685 14.28C9.685 14.7067 9.53833 15.0667 9.245 15.36C8.95166 15.6533 8.59167 15.8 8.165 15.8ZM20.565 2.60001C20.405 2.33334 20.1917 2.20001 19.925 2.20001H15.925V3.72001H19.445L21.525 7.80001L22.805 7.16001L20.565 2.60001ZM10.565 13.56H16.245V15.08H10.565V13.56ZM5.925 13.56H3.285C3.07167 13.56 2.89833 13.64 2.765 13.8C2.63167 13.96 2.565 14.1333 2.565 14.32C2.565 14.5067 2.63167 14.68 2.765 14.84C2.89833 15 3.07167 15.08 3.285 15.08H5.925C6.13833 15.08 6.31167 15 6.445 14.84C6.57833 14.68 6.645 14.5067 6.645 14.32C6.645 14.1333 6.57833 13.96 6.445 13.8C6.31167 13.64 6.13833 13.56 5.925 13.56ZM24.245 8.92001L22.725 7.00001C22.6183 6.84001 22.4317 6.76001 22.165 6.76001H16.645V1.40001C16.645 1.24001 16.5783 1.08001 16.445 0.920008C16.3117 0.760008 16.1383 0.680008 15.925 0.680008H3.285C3.07167 0.680008 2.89833 0.760008 2.765 0.920008C2.63167 1.08001 2.565 1.25334 2.565 1.44001C2.565 1.62667 2.63167 1.80001 2.765 1.96001C2.89833 2.12001 3.07167 2.20001 3.285 2.20001H15.125V7.48001C15.125 7.69334 15.205 7.88001 15.365 8.04001C15.525 8.20001 15.7117 8.28001 15.925 8.28001H21.765L22.885 9.64001V13.56H20.805C20.5917 13.56 20.405 13.64 20.245 13.8C20.085 13.96 20.005 14.1333 20.005 14.32C20.005 14.5067 20.085 14.68 20.245 14.84C20.405 15 20.5917 15.08 20.805 15.08H23.685C23.845 15.08 24.005 15 24.165 14.84C24.325 14.68 24.405 14.4933 24.405 14.28V9.40001C24.405 9.24001 24.3517 9.08001 24.245 8.92001ZM5.845 9.72001H2.405C2.19167 9.72001 2.005 9.80001 1.845 9.96001C1.685 10.12 1.605 10.3067 1.605 10.52C1.605 10.7333 1.685 10.9067 1.845 11.04C2.005 11.1733 2.19167 11.24 2.405 11.24H5.845C6.05833 11.24 6.245 11.1733 6.405 11.04C6.565 10.9067 6.645 10.7333 6.645 10.52C6.645 10.3067 6.565 10.12 6.405 9.96001C6.245 9.80001 6.05833 9.72001 5.845 9.72001ZM7.605 6.76001H1.125C0.964999 6.76001 0.804999 6.82667 0.644999 6.96001C0.484999 7.09334 0.404999 7.26667 0.404999 7.48001C0.404999 7.69334 0.484999 7.88001 0.644999 8.04001C0.804999 8.20001 0.964999 8.28001 1.125 8.28001H7.605C7.81833 8.28001 8.005 8.20001 8.165 8.04001C8.325 7.88001 8.405 7.69334 8.405 7.48001C8.405 7.26667 8.325 7.09334 8.165 6.96001C8.005 6.82667 7.81833 6.76001 7.605 6.76001ZM8.885 3.80001H2.405C2.19167 3.80001 2.005 3.86667 1.845 4.00001C1.685 4.13334 1.605 4.30667 1.605 4.52001C1.605 4.73334 1.685 4.92001 1.845 5.08001C2.005 5.24001 2.19167 5.32001 2.405 5.32001H8.885C9.045 5.32001 9.205 5.24001 9.365 5.08001C9.525 4.92001 9.605 4.73334 9.605 4.52001C9.605 4.30667 9.525 4.13334 9.365 4.00001C9.205 3.86667 9.045 3.80001 8.885 3.80001Z"
+            fill="#00A149" />
+        </svg>
+        Order Now
+      </button>
+    </div>
+  </section>
+
+  <section class="position-relative">
+    <div class="offerDetails">
+      <div class="offer-container">
+        <img data-aos="fade-up" src="img/offers/offer-1.png" class="offer-box1" alt="Main Offer" />
+        <div class="offer-container-2">
+          <img data-aos="zoom-in" src="img/offers/offer-2.png" alt="Offer 2" />
+          <img data-aos="zoom-in" src="img/offers/offer-3.png" alt="Offer 3" />
+          <img data-aos="zoom-in" src="img/offers/offer-4.png" alt="Offer 4" />
+          <img data-aos="zoom-in" src="img/offers/offer-5.png" alt="Offer 5" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative">
+    <div data-aos="fade-up" class="foodMenu">
+      <div class="menu-heading">About Our Food</div>
+      <div class="menu-sub-heading">Trending Food Menu</div>
+
+      <div class="menuCard">
+        <!-- Column - 1 ------------------------------------------ -->
+        <div class="menu-part ">
+
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                CHICAGO DEEP PIZZA
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $22.00
+            </div>
+          </div>
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                Chicago Burger King.
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $26.00
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                Chicago French Fries.
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $28.00
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                Chicago beef jerky.
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $39.00
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Column - 2 ------------------------------------------ -->
+        <div class="menu-part">
+
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                CHINESE PASTA
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $34.00
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                Chicago chicken wings.
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $39.00
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                Chicago Deep Pasta.
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $34.00
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div data-aos="zoom-in" class="item d-flex flex-row">
+            <div class=" d-flex flex-column align-items-start justify-content-center">
+              <div class="itemName">
+                Chicago salad recipes.
+              </div>
+              <div class="itemInfo">
+                Its the perfect dining experience where Experience quick and efficient.
+              </div>
+            </div>
+            <div class="itemPrice d-flex">
+              $26.00
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section data-aos="zoom-in" class="position-relative">
+    <div class="foodSlider">
+      <img src="img/arrow.png" alt="Arrow Left" class="arr-left" />
+      <div class="food-images">
+        <img src="img/food-slide/food-slide-1.png" alt="Food 1" class="foodImg" />
+        <img src="img/food-slide/food-slide-2.png" alt="Food 2" class="foodImg" />
+        <img src="img/food-slide/food-slide-3.png" alt="Food 3" class="foodImg" />
+      </div>
+      <img src="img/arrow.png" alt="Arrow Right" class="arr-right" />
+    </div>
+  </section>
+
+  <section class="position-relative">
+    <div class="about-section">
+      <div class="about-section-parts">
+        <div data-aos="fade-up" class="about-info">
+          <div class="about-side-text">About Our Food</div>
+          <h2 class="sideText1">Where Quality Meet <br> Excellent <strong class="pink-clr">Service.</strong> </h2>
+          <div class="sideText2 w-100">
+            Its the perfect dining experience where every dish is crafted with fresh, high-quality Experience quick <br>
+            and efficient service that ensures your food is servead fresh Its the dining experience where every dish
+            <br>
+            is crafted with fresh, high-quality ingredients
+          </div>
+          <span class="reputation-detail mt-3">
+            <span class="d-flex flex-row mt-4 ">
+              <div>
+                <svg width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg"">
+                <path d=" M51.1433 25.6001V22.4801C51.1433 20.5157 50.45 18.869 49.0633 17.5401C47.6767 16.2112 46.0589
+                  15.5468 44.21 15.5468H33.4633C32.4233 15.5468 31.4411 15.7779 30.5167 16.2401L30.69
+                  14.8534H32.0767C32.3078 14.8534 32.51 14.7957 32.6833 14.6801C32.8567 14.5645 32.9433 14.3912 32.9433
+                  14.1601V11.9068C32.9433 10.9823 32.6256 10.2312 31.99 9.65344C31.3545 9.07566 30.6322 8.78677 29.8233
+                  8.78677H22.5433V2.2001C22.5433 2.08455 22.4567 1.94011 22.2833 1.76677C22.11 1.59344 21.9656 1.50677
+                  21.85 1.50677H18.9033C18.6722 1.50677 18.4989 1.59344 18.3833 1.76677C18.2678 1.94011 18.21 2.08455
+                  18.21 2.2001V8.78677H10.93C10.1211 8.78677 9.3989 9.07566 8.76335 9.65344C8.12779 10.2312 7.81001
+                  10.9823 7.81001 11.9068V14.1601C7.81001 14.3912 7.89668 14.5645 8.07001 14.6801C8.24335 14.7957
+                  8.38779 14.8534 8.50335 14.8534H10.0633L10.93 27.5068H10.5833C7.92557 27.5068 5.64334 28.4601 3.73668
+                  30.3668C1.83001 32.2734 0.876678 34.5268 0.876678 37.1268C0.876678 39.7268 1.74335 41.9512 3.47668
+                  43.8001L1.05001 47.9601C0.934456 48.1912 0.963345 48.4223 1.13668 48.6534C1.31001 48.8845 1.57001
+                  49.0001 1.91668 49.0001L4.86335 48.3068L5.90335 51.2534C5.90335 51.4845 6.07668 51.6579 6.42335
+                  51.7734H6.59668C6.82779 51.7734 7.00112 51.6579 7.11668 51.4268L9.71668 46.7468H11.2767L14.05
+                  51.4268C14.1656 51.6579 14.3389 51.7734 14.57 51.7734H14.7433C14.9745 51.6579 15.1478 51.4845 15.2633
+                  51.2534L16.3033 48.3068L19.25 49.0001C19.5967 49.0001 19.8567 48.8845 20.03 48.6534C20.2033 48.4223
+                  20.1745 48.1912 19.9433 47.9601L17.5167 43.8001C17.9789 43.3379 18.3256 42.8757 18.5567
+                  42.4134H26.7033C26.9345 43.1068 27.3389 43.6845 27.9167 44.1468C28.4945 44.609 29.13 44.8401 29.8233
+                  44.8401H47.85C48.7745 44.8401 49.5545 44.5223 50.19 43.8868C50.8256 43.2512 51.1433 42.4712 51.1433
+                  41.5468V37.9068C51.1433 37.6757 51.0567 37.5023 50.8833 37.3868C50.71 37.2712 50.5656 37.2134 50.45
+                  37.2134H50.2767C50.8545 36.5201 51.1433 35.7112 51.1433 34.7868C51.1433 33.5157 50.6233 32.4757
+                  49.5833 31.6668C50.6233 30.9734 51.1433 29.9912 51.1433 28.7201C51.1433 27.7957 50.8545 26.9868
+                  50.2767 26.2934H50.45C50.5656 26.2934 50.71 26.2068 50.8833 26.0334C51.0567 25.8601 51.1433 25.7157
+                  51.1433 25.6001ZM44.21 16.9334C45.7122 16.9334 47.0122 17.4823 48.11 18.5801C49.2078 19.6779 49.7567
+                  20.9779 49.7567 22.4801V24.9068H27.9167V22.4801C27.9167 20.9779 28.4656 19.6779 29.5633
+                  18.5801C30.6611 17.4823 31.9611 16.9334 33.4633 16.9334H44.21ZM36.5833 26.2934L34.33 28.5468L32.0767
+                  26.2934H36.5833ZM19.5967 2.89344H21.1567V8.78677H19.5967V2.89344ZM9.19668 11.9068C9.19668 11.4445
+                  9.37001 11.0401 9.71668 10.6934C10.0633 10.3468 10.4678 10.1734 10.93 10.1734H29.8233C30.2856 10.1734
+                  30.6611 10.3468 30.95 10.6934C31.2389 11.0401 31.3833 11.4445 31.3833
+                  11.9068V13.4668H9.19668V11.9068ZM6.59668 49.3468L6.07668 47.2668C5.84557 46.9201 5.55668 46.7468
+                  5.21001 46.7468L3.13001 47.2668L4.51668 44.6668C5.67223 45.5912 6.94335 46.2268 8.33001
+                  46.5734L6.59668 49.3468ZM2.26335 37.2134C2.26335 34.9023 3.07223 32.9379 4.69001 31.3201C6.30779
+                  29.7023 8.24335 28.8934 10.4967 28.8934C12.75 28.8934 14.6856 29.7023 16.3033 31.3201C17.9211 32.9379
+                  18.73 34.8734 18.73 37.1268C18.73 39.3801 17.9211 41.3157 16.3033 42.9334C14.6856 44.5512 12.75
+                  45.3601 10.4967 45.3601C8.24335 45.3601 6.30779 44.5512 4.69001 42.9334C3.07223 41.3157 2.26335 39.409
+                  2.26335 37.2134ZM15.9567 46.7468C15.4945 46.7468 15.2056 46.9201 15.09 47.2668L14.3967 49.3468L12.8367
+                  46.5734C14.2233 46.2268 15.4367 45.5912 16.4767 44.6668L18.0367 47.2668L15.9567 46.7468ZM12.3167
+                  27.6801L11.6233 14.8534H29.13L28.9567 17.1068C28.2633 17.8001 27.6856 18.609 27.2233 19.5334C26.7611
+                  20.4579 26.53 21.4401 26.53 22.4801V25.6001C26.53 25.7157 26.6167 25.8601 26.79 26.0334C26.9633
+                  26.2068 27.1078 26.2934 27.2233 26.2934H27.3967C26.8189 26.9868 26.53 27.7957 26.53 28.7201C26.53
+                  29.9912 27.05 30.9734 28.09 31.6668C27.05 32.4757 26.53 33.5157 26.53 34.7868C26.53 35.7112 26.8189
+                  36.5201 27.3967 37.2134H27.2233C27.1078 37.2134 26.9633 37.2712 26.79 37.3868C26.6167 37.5023 26.53
+                  37.6757 26.53 37.9068V41.0268H19.4233C19.8856 39.7557 20.1167 38.4845 20.1167 37.2134C20.1167 34.9023
+                  19.3945 32.8512 17.95 31.0601C16.5056 29.269 14.6278 28.1423 12.3167 27.6801ZM49.7567 41.5468C49.7567
+                  42.009 49.5545 42.4423 49.15 42.8468C48.7456 43.2512 48.3122 43.4534 47.85 43.4534H29.8233C29.3611
+                  43.4534 28.9278 43.2512 28.5233 42.8468C28.1189 42.4423 27.9167 42.009 27.9167
+                  41.5468V38.6001H49.7567V41.5468ZM49.7567 34.7868C49.7567 35.4801 49.4967 36.0579 48.9767
+                  36.5201C48.4567 36.9823 47.9078 37.2134 47.33 37.2134H30.3433C29.65 37.2134 29.0722 36.9823 28.61
+                  36.5201C28.1478 36.0579 27.9167 35.4801 27.9167 34.7868C27.9167 34.0934 28.1478 33.5157 28.61
+                  33.0534C29.0722 32.5912 29.65 32.3601 30.3433 32.3601H34.6767L38.3167 36.1734C38.4322 36.289 38.6056
+                  36.3468 38.8367 36.3468C39.0678 36.3468 39.2411 36.289 39.3567 36.1734L42.9967 32.3601H47.33C47.9078
+                  32.3601 48.4567 32.5912 48.9767 33.0534C49.4967 33.5157 49.7567 34.0934 49.7567 34.7868ZM36.5833
+                  32.3601H41.09L38.8367 34.6134L36.5833 32.3601ZM49.7567 28.7201C49.7567 29.2979 49.4967 29.8179 48.9767
+                  30.2801C48.4567 30.7423 47.9078 30.9734 47.33 30.9734H30.3433C29.65 30.9734 29.0722 30.7423 28.61
+                  30.2801C28.1478 29.8179 27.9167 29.269 27.9167 28.6334C27.9167 27.9979 28.1189 27.4779 28.5233
+                  27.0734C28.9278 26.669 29.4189 26.409 29.9967 26.2934L33.81 29.9334C33.9256 30.049 34.07 30.1068
+                  34.2433 30.1068C34.4167 30.1068 34.6189 30.049 34.85 29.9334L38.49 26.2934H47.33C47.9078 26.2934
+                  48.4567 26.5245 48.9767 26.9868C49.4967 27.449 49.7567 28.0268 49.7567 28.7201ZM10.5833 30.1068C8.6189
+                  30.1068 6.94335 30.8001 5.55668 32.1868C4.17001 33.5734 3.47668 35.2201 3.47668 37.1268C3.47668
+                  39.0334 4.17001 40.6801 5.55668 42.0668C6.94335 43.4534 8.6189 44.1468 10.5833 44.1468C12.5478 44.1468
+                  14.1945 43.4534 15.5233 42.0668C16.8522 40.6801 17.5167 39.0334 17.5167 37.1268C17.5167 35.2201
+                  16.8522 33.5734 15.5233 32.1868C14.1945 30.8001 12.5478 30.1068 10.5833 30.1068ZM10.5833
+                  42.7601C8.96557 42.7601 7.63668 42.2112 6.59668 41.1134C5.55668 40.0157 5.03668 38.6868 5.03668
+                  37.1268C5.03668 35.5668 5.55668 34.2379 6.59668 33.1401C7.63668 32.0423 8.93668 31.4934 10.4967
+                  31.4934C12.0567 31.4934 13.3856 32.0423 14.4833 33.1401C15.5811 34.2379 16.13 35.5668 16.13
+                  37.1268C16.13 38.6868 15.5811 40.0157 14.4833 41.1134C13.3856 42.2112 12.0856 42.7601 10.5833
+                  42.7601ZM13.8767 34.6134C13.9922 34.729 14.05 34.8734 14.05 35.0468C14.05 35.2201 13.9922 35.4223
+                  13.8767 35.6534L9.54335 39.9868C9.31223 40.1023 9.1389 40.1601 9.02334 40.1601C8.79223 40.1601 8.6189
+                  40.1023 8.50335 39.9868L6.42335 37.9068C6.30779 37.7912 6.25001 37.6179 6.25001 37.3868C6.25001
+                  37.1557 6.33668 36.9823 6.51001 36.8668C6.68335 36.7512 6.85668 36.6934 7.03001 36.6934C7.20335
+                  36.6934 7.34779 36.7512 7.46335 36.8668L9.02334 38.4268L12.8367 34.6134C13.0678 34.4979 13.27 34.4401
+                  13.4433 34.4401C13.6167 34.4401 13.7611 34.4979 13.8767 34.6134ZM41.9567 19.3601C41.9567 19.129
+                  42.0433 18.9268 42.2167 18.7534C42.39 18.5801 42.5922 18.4934 42.8233 18.4934C43.0545 18.4934 43.2567
+                  18.5801 43.43 18.7534C43.6033 18.9268 43.69 19.129 43.69 19.3601C43.69 19.5912 43.6033 19.7934 43.43
+                  19.9668C43.2567 20.1401 43.0545 20.2268 42.8233 20.2268C42.5922 20.2268 42.39 20.1401 42.2167
+                  19.9668C42.0433 19.7934 41.9567 19.5912 41.9567 19.3601ZM40.05 22.4801C40.05 22.249 40.1367 22.0468
+                  40.31 21.8734C40.4833 21.7001 40.6856 21.6134 40.9167 21.6134C41.1478 21.6134 41.3211 21.7001 41.4367
+                  21.8734C41.5522 22.0468 41.61 22.249 41.61 22.4801C41.61 22.7112 41.5522 22.8845 41.4367
+                  23.0001C41.3211 23.1157 41.1478 23.1734 40.9167 23.1734C40.6856 23.1734 40.4833 23.1157 40.31
+                  23.0001C40.1367 22.8845 40.05 22.7112 40.05 22.4801ZM44.0367 22.4801C44.0367 22.249 44.1233 22.0468
+                  44.2967 21.8734C44.47 21.7001 44.6722 21.6134 44.9033 21.6134C45.1345 21.6134 45.3367 21.7001 45.51
+                  21.8734C45.6833 22.0468 45.77 22.249 45.77 22.4801C45.77 22.7112 45.6833 22.8845 45.51 23.0001C45.3367
+                  23.1157 45.1345 23.1734 44.9033 23.1734C44.6722 23.1734 44.47 23.1157 44.2967 23.0001C44.1233 22.8845
+                  44.0367 22.7112 44.0367 22.4801ZM31.9033 22.4801C31.9033 22.249 31.99 22.0468 32.1633 21.8734C32.3367
+                  21.7001 32.5389 21.6134 32.77 21.6134C33.0011 21.6134 33.2033 21.7001 33.3767 21.8734C33.55 22.0468
+                  33.6367 22.249 33.6367 22.4801C33.6367 22.7112 33.55 22.8845 33.3767 23.0001C33.2033 23.1157 33.0011
+                  23.1734 32.77 23.1734C32.5389 23.1734 32.3367 23.1157 32.1633 23.0001C31.99 22.8845 31.9033 22.7112
+                  31.9033 22.4801ZM33.9833 19.3601C33.9833 19.129 34.07 18.9268 34.2433 18.7534C34.4167 18.5801 34.6189
+                  18.4934 34.85 18.4934C35.0811 18.4934 35.2545 18.5801 35.37 18.7534C35.4856 18.9268 35.5433 19.129
+                  35.5433 19.3601C35.5433 19.5912 35.4856 19.7934 35.37 19.9668C35.2545 20.1401 35.0811 20.2268 34.85
+                  20.2268C34.6189 20.2268 34.4167 20.1401 34.2433 19.9668C34.07 19.7934 33.9833 19.5912 33.9833
+                  19.3601ZM36.0633 22.4801C36.0633 22.249 36.1211 22.0468 36.2367 21.8734C36.3522 21.7001 36.5256
+                  21.6134 36.7567 21.6134C36.9878 21.6134 37.19 21.7001 37.3633 21.8734C37.5367 22.0468 37.6233 22.249
+                  37.6233 22.4801C37.6233 22.7112 37.5367 22.8845 37.3633 23.0001C37.19 23.1157 36.9878 23.1734 36.7567
+                  23.1734C36.5256 23.1734 36.3522 23.1157 36.2367 23.0001C36.1211 22.8845 36.0633 22.7112 36.0633
+                  22.4801ZM37.97 19.3601C37.97 19.129 38.0567 18.9268 38.23 18.7534C38.4033 18.5801 38.6056 18.4934
+                  38.8367 18.4934C39.0678 18.4934 39.27 18.5801 39.4433 18.7534C39.6167 18.9268 39.7033 19.129 39.7033
+                  19.3601C39.7033 19.5912 39.6167 19.7934 39.4433 19.9668C39.27 20.1401 39.0678 20.2268 38.8367
+                  20.2268C38.6056 20.2268 38.4033 20.1401 38.23 19.9668C38.0567 19.7934 37.97 19.5912 37.97 19.3601Z"
+                  fill="#FFC222" />
+                </svg>
+              </div>
+              <div class="about-itemInfo flex-column align-items-start justify-content-start ms-3">
+                <div class="itemName">
+                  Super Quality Food
+                </div>
+                <div class="about-itemInfo text-dark">
+                  A team of dreamers and doers building unique interactive music and art
+                </div>
+              </div>
+            </span>
+            <span class="d-flex flex-row mt-4">
+              <div>
+                <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.7633 6.57344L17.5367 8.82677L16.67 12.2934C16.5544 12.7557 16.67 13.1601 17.0167 13.5068C17.2478 13.6223 17.4789 13.6801 17.71 13.6801C17.9411 13.6801 18.1144 13.6223 18.23 13.5068L21.35 11.6001L24.2967 13.5068C24.6433 13.7379 25.0478 13.709 25.51 13.4201C25.9722 13.1312 26.0878 12.7557 25.8567 12.2934L24.99 8.82677L27.7633 6.57344C28.11 6.22677 28.2255 5.82233 28.11 5.3601C27.9944 4.89788 27.6478 4.66677 27.07 4.66677L23.6033 4.49344L22.39 1.2001C22.1589 0.737881 21.8122 0.506771 21.35 0.506771C20.7722 0.506771 20.4255 0.737881 20.31 1.2001L18.9233 4.49344L15.4567 4.66677C14.9944 4.66677 14.6767 4.89788 14.5033 5.3601C14.33 5.82233 14.4167 6.22677 14.7633 6.57344ZM19.4433 6.05344C19.9055 6.05344 20.1944 5.82233 20.31 5.3601L21.35 3.10677L22.2167 5.3601C22.3322 5.82233 22.6211 6.05344 23.0833 6.05344L25.6833 6.22677L23.7767 7.78677C23.3144 8.13344 23.1411 8.53788 23.2567 9.0001L23.95 11.4268L21.87 10.0401C21.6389 9.92455 21.4367 9.86677 21.2633 9.86677C21.09 9.86677 20.8878 9.92455 20.6567 10.0401L18.5767 11.4268L19.27 9.0001C19.3855 8.53788 19.27 8.13344 18.9233 7.78677L16.8433 6.22677L19.4433 6.05344ZM7.82999 16.6268L10.7767 18.7068C11.2389 18.9379 11.6722 18.909 12.0767 18.6201C12.4811 18.3312 12.6255 17.9557 12.51 17.4934L11.6433 14.0268L14.4167 11.7734C14.7633 11.4268 14.85 11.0223 14.6767 10.5601C14.5033 10.0979 14.1855 9.86677 13.7233 9.86677L10.0833 9.69344L8.86999 6.4001C8.75444 5.82233 8.40777 5.53344 7.82999 5.53344C7.36777 5.53344 7.0211 5.82233 6.78999 6.4001L5.57666 9.69344L2.10999 9.86677C1.53221 9.86677 1.15666 10.0979 0.983324 10.5601C0.80999 11.0223 0.954435 11.4268 1.41666 11.7734L4.18999 14.0268L3.14999 17.4934C3.03443 17.9557 3.20777 18.3023 3.66999 18.5334C3.9011 18.7645 4.10332 18.8801 4.27666 18.8801C4.44999 18.8801 4.65221 18.8223 4.88332 18.7068L7.82999 16.6268ZM3.49666 11.4268L5.92332 11.2534C6.5011 11.2534 6.84777 11.0223 6.96332 10.5601L7.82999 8.13344L8.69666 10.5601C8.92777 11.0223 9.27444 11.2534 9.73666 11.2534L12.3367 11.4268L10.2567 12.9868C9.90999 13.2179 9.79443 13.5645 9.90999 14.0268L10.6033 16.4534L8.52332 15.0668C8.29221 14.9512 8.0611 14.8934 7.82999 14.8934C7.59888 14.8934 7.42555 14.9512 7.30999 15.0668L5.22999 16.4534L5.74999 14.0268C5.9811 13.5645 5.86555 13.2179 5.40332 12.9868L3.49666 11.4268ZM27.9367 10.5601C27.7055 11.0223 27.8211 11.4268 28.2833 11.7734L31.0567 14.0268L30.0167 17.4934C29.9011 17.9557 30.0744 18.3023 30.5367 18.5334C30.6522 18.7645 30.8255 18.8801 31.0567 18.8801C31.2878 18.8801 31.5189 18.8223 31.75 18.7068L34.6967 16.6268L37.6433 18.7068C38.1055 18.9379 38.5389 18.909 38.9433 18.6201C39.3478 18.3312 39.4922 17.9557 39.3767 17.4934L38.3367 14.0268L41.11 11.7734C41.5722 11.4268 41.7167 11.0223 41.5433 10.5601C41.37 10.0979 41.0522 9.86677 40.59 9.86677L36.95 9.69344L35.7367 6.4001C35.5055 5.82233 35.1589 5.53344 34.6967 5.53344C34.2344 5.53344 33.8878 5.82233 33.6567 6.4001L32.4433 9.69344L28.8033 9.86677C28.3411 9.86677 28.0522 10.0979 27.9367 10.5601ZM32.79 11.2534C33.2522 11.2534 33.5989 11.0223 33.83 10.5601L34.6967 8.13344L35.5633 10.5601C35.7944 11.0223 36.1411 11.2534 36.6033 11.2534L39.03 11.4268L37.1233 12.9868C36.7767 13.2179 36.6611 13.5645 36.7767 14.0268L37.47 16.4534L35.2167 15.0668C35.1011 14.9512 34.9278 14.8934 34.6967 14.8934C34.4655 14.8934 34.2344 14.9512 34.0033 15.0668L31.9233 16.4534L32.6167 14.0268C32.7322 13.5645 32.6167 13.2179 32.27 12.9868L30.3633 11.4268L32.79 11.2534ZM40.4167 31.5334C38.9144 31.5334 37.4989 31.8512 36.17 32.4868C34.8411 33.1223 33.7144 34.0179 32.79 35.1734C30.71 33.0934 28.2833 31.7068 25.51 31.0134C26.8967 30.2045 27.9944 29.1068 28.8033 27.7201C29.6122 26.3334 30.0167 24.8312 30.0167 23.2134C30.0167 20.7868 29.1789 18.7357 27.5033 17.0601C25.8278 15.3845 23.7767 14.5468 21.35 14.5468C18.9233 14.5468 16.8433 15.3845 15.11 17.0601C13.3767 18.7357 12.51 20.7868 12.51 23.2134C12.51 24.8312 12.9144 26.3334 13.7233 27.7201C14.5322 29.1068 15.63 30.2045 17.0167 31.0134C14.4744 31.7068 12.2211 32.9201 10.2567 34.6534C8.63888 36.0401 7.39666 37.629 6.52999 39.4201C5.66332 41.2112 5.11443 43.1468 4.88332 45.2268C4.76777 45.4579 4.79666 45.6601 4.96999 45.8334C5.14332 46.0068 5.34555 46.0934 5.57666 46.0934H32.0967C32.9055 47.4801 34.0611 48.6068 35.5633 49.4734C37.0655 50.3401 38.6833 50.7734 40.4167 50.7734C43.0744 50.7734 45.3567 49.849 47.2633 48.0001C49.17 46.1512 50.1233 43.869 50.1233 41.1534C50.1233 38.4379 49.17 36.1557 47.2633 34.3068C45.3567 32.4579 43.0744 31.5334 40.4167 31.5334ZM14.07 23.2134C14.07 21.249 14.7922 19.5734 16.2367 18.1868C17.6811 16.8001 19.3855 16.1068 21.35 16.1068C23.3144 16.1068 24.99 16.8001 26.3767 18.1868C27.7633 19.5734 28.4567 21.249 28.4567 23.2134C28.4567 25.1779 27.7633 26.8534 26.3767 28.2401C24.99 29.6268 23.3144 30.3201 21.35 30.3201C19.3855 30.3201 17.6811 29.6268 16.2367 28.2401C14.7922 26.8534 14.07 25.1779 14.07 23.2134ZM6.61666 44.5334C7.19443 40.9512 8.86999 37.9757 11.6433 35.6068C14.4167 33.2379 17.6522 32.0534 21.35 32.0534C23.3144 32.0534 25.2211 32.429 27.07 33.1801C28.9189 33.9312 30.5367 35.0579 31.9233 36.5601C31.1144 37.9468 30.71 39.5068 30.71 41.2401C30.71 42.2801 30.8833 43.3779 31.23 44.5334H6.61666ZM40.4167 49.2134C38.2211 49.2134 36.3144 48.4334 34.6967 46.8734C33.0789 45.3134 32.27 43.4068 32.27 41.1534C32.27 38.9001 33.0789 36.9934 34.6967 35.4334C36.3144 33.8734 38.2211 33.0934 40.4167 33.0934C42.6122 33.0934 44.49 33.8734 46.05 35.4334C47.61 36.9934 48.39 38.9001 48.39 41.1534C48.39 43.4068 47.61 45.3134 46.05 46.8734C44.49 48.4334 42.6122 49.2134 40.4167 49.2134ZM45.9633 37.0801C45.5011 36.6179 44.9811 36.3868 44.4033 36.3868C43.8255 36.3868 43.3633 36.6179 43.0167 37.0801L39.2033 40.7201L37.8167 39.3334C37.3544 38.9868 36.8344 38.8134 36.2567 38.8134C35.6789 38.8134 35.1878 39.0157 34.7833 39.4201C34.3789 39.8245 34.1767 40.3157 34.1767 40.8934C34.1767 41.4712 34.4078 41.9912 34.87 42.4534L37.6433 45.2268C38.1055 45.689 38.6255 45.9201 39.2033 45.9201C39.7811 45.9201 40.3011 45.689 40.7633 45.2268L45.9633 40.0268C46.31 39.5645 46.4833 39.0445 46.4833 38.4668C46.4833 37.889 46.31 37.4268 45.9633 37.0801ZM44.75 38.8134C44.4033 39.2757 43.7678 39.9112 42.8433 40.7201L39.55 44.1868C39.3189 44.4179 39.0878 44.4179 38.8567 44.1868L35.91 41.2401C35.6789 41.009 35.65 40.8068 35.8233 40.6334C35.9967 40.4601 36.1411 40.3734 36.2567 40.3734C36.3722 40.3734 36.4878 40.4312 36.6033 40.5468L38.6833 42.4534C38.7989 42.6845 38.9722 42.8001 39.2033 42.8001C39.4344 42.8001 39.6078 42.6845 39.7233 42.4534L44.0567 38.1201C44.1722 38.0045 44.2878 37.9468 44.4033 37.9468C44.5189 37.9468 44.6633 38.0334 44.8367 38.2068C45.01 38.3801 44.9811 38.5823 44.75 38.8134Z"
+                    fill="#FFC222" />
+                </svg>
+              </div>
+              <div class="about-itemInfo d-flex flex-column align-items-start justify-content-start ms-3">
+                <div class="itemName">
+                  Well Reputation
+                </div>
+                <div class="about-itemInfo text-dark ">
+                  A team of dreamers and doers building unique interactive music and art
+                </div>
+              </div>
+            </span>
+
+          </span>
+          <div class="reputation-detail mt-5">
+            <div>
+              <button class="more-about-us-btn"> More About Us </button>
+            </div>
+            <div class="founder-tagline">
+              <div class="about-text text-warning">
+                BRENDON GARREY
+              </div>
+              <div class="about-text">
+                CUSTOMER’S EXPERIENCE IS OUR HIGHEST PRIORITY.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-food-img">
+          <img src="img/food/about-food.png" alt="" class="about-food-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative">
+    <div class="foodMenu2">
+      <div class="inner-bg">
+        <div class="inner-bg-text mt-5">
+          <div class="side-text">FOOD PROCESSING</div>
+          <div class="sideText1">HOW WE SERVE YOU?</div>
+          <div class="food-proccessing d-flex row justify-content-center gap-3">
+
+            <!-- Card 1 -->
+            <div class="innerTextSides mt-5">
+              <div class="d-flex flex-column align-items-center">
+                <div class="mt-4">
+                  Cooking With care
+                  <div class="dashed-line-left"></div>
+                </div>
+              </div>
+              <div class="innerTextCenter-info">
+                Its the perfect dining experience where Experience
+                quick and efficient
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="innerTextCenter mt-5">
+              <div class="mt-4">
+                QUICKLY DELIVERY
+              </div>
+              <div class="innerTextCenter-info">
+                Its the perfect dining experience where Experience
+                quick and efficient
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="innerTextSides mt-5">
+              <div class="d-flex flex-column align-items-center">
+                <div class="mt-4">
+                  CHOOSE FOOD
+                  <div class="dashed-line-right"></div>
+                </div>
+              </div>
+              <div class="innerTextCenter-info">
+                Its the perfect dining experience where Experience
+                quick and efficient
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative">
+    <div data-aos="fade-down" class="founder-section">
+      <!-- <div class="d-flex flex-row gap-5"> -->
+      <div class="founder-img">
+        <img src="img/founder.png" alt="" class="founder-img">
+      </div>
+      <div class="founder-part">
+        <div class="founder-name">
+          Piter Bowman
+        </div>
+        <div class="itemName text-warning">
+          Business CEO & co founder
+        </div>
+        <div class="founder-info">
+          “Thank you for dinner last night. It was amazing!! I
+          have say it’s the best meal I have had in quite some
+          time. will definitely be seeing more eating next year.”
+        </div>
+        <div class="rating gap-1 mt-4">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <div class="stepper-container mt-5">
+          <div class="dot"></div>
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative news-section">
+    <div class="news-section-text">
+      <div class="news-heading">NEWS & BLOG</div>
+      <div class="news-sub-heading">Update News & Blog</div>
+    </div>
+    <div class="news-list">
+      <!-- News/Blog 1 -->
+      <div data-aos="fade-up" data-aos-delay="100" class="news-card">
+        <img src="img/blog/blog-1.png" alt="" class="blog-imgs">
+        <div class="news-details">
+          <div class="news-date">
+            15 Feb 2024 <span class="ms-5">Comments (0)</span>
+          </div>
+          <div class="news-title">
+            Quick Cravings: Unraveling Fast Food Delights
+          </div>
+          <div class="news-info">
+            There are many variations of passages of Lorem Ipsum
+            available, but majority have suffered Lorem haca
+            ullamcorper donec ante habi believable. If you are going
+            to use a passage...
+          </div>
+        </div>
+      </div>
+      <!-- News/Blog 2 -->
+      <div data-aos="fade-up" data-aos-delay="200" class="news-card">
+        <img src="img/blog/blog-2.png" alt="" class="blog-imgs">
+        <div class="news-details">
+          <div class="news-date">
+            15 Feb 2024 <span class="ms-5">Comments (0)</span>
+          </div>
+          <div class="news-title">
+            Veggie Vibes: Garden Fresh Delightful Creations
+          </div>
+          <div class="news-info">
+            There are many variations of passages of Lorem Ipsum
+            available, but majority have suffered Lorem haca
+            ullamcorper donec ante habi believable. If you are going
+            to use a passage...
+          </div>
+        </div>
+      </div>
+      <!-- News/Blog 3 -->
+      <div data-aos="fade-up" data-aos-delay="300" class="news-card">
+        <img src="img/blog/blog-3.png" alt="" class="blog-imgs">
+        <div class="news-details">
+          <div class="news-date">
+            15 Feb 2024 <span class="ms-5">Comments (0)</span>
+          </div>
+          <div class="news-title">
+            Bold Bite: Exotic Flavors, Global Adventure
+          </div>
+          <div class="news-info">
+            There are many variations of passages of Lorem Ipsum
+            available, but majority have suffered Lorem haca
+            ullamcorper donec ante habi believable. If you are going
+            to use a passage...
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <secton class="position-relative">
+    <div class="foods-images">
+      <img src="img/food/food-row-1.png" alt="">
+      <img src="img/food/food-row-2.png" alt="">
+      <img src="img/food/food-row-3.png" alt="">
+      <img src="img/food/food-row-4.png" alt="">
+      <img src="img/food/food-row-5.png" alt="">
+    </div>
+  </secton>
+
+  <section class="position-relative last-section d-flex align-items-center justify-content-center">
+    <img src="img/last-bg.png" alt="" class="last-sec-img position-absolute">
+
+    <div class="last-sec-text d-flex align-items-center">
+      <div class="last-sec-row">
+
+        <div data-aos="zoom-in" data-aos-delay="100" class="pizzahut-details">
+          <div>
+            <div class="pizzahut-title">
+              pizza hut
+            </div>
+            <div class="pizzahut-sub-title">
+              FOOD & RESTAURANT
+            </div>
+          </div>
+          <div>
+            <div class="pizzahut-timing">
+              Tuesday - Saturday: 12:00pm - 23:00pm
+            </div>
+            <div class="pizzahut-timing text-decoration-underline mt-3">
+              Closed on Sunday
+            </div>
+          </div>
+          <div>
+            <div class="pizzahut-timing">
+              5 star rated on TripAdvisor
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-delay="200" class="about-details pt-4 ">
+          <div class="about-title">
+            About
+          </div>
+          <div class="about-list-container">
+            <ul>
+              <li>Fredoka One</li>
+              <li>Special Dish</li>
+              <li>Reservation</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-delay="300" class="about-details me-5 pt-4 ">
+          <div class="about-title">
+            Menu
+          </div>
+          <div class="about-list-container mt-2">
+            <ul>
+              <li>Streaks</li>
+              <li>Burgers</li>
+              <li>Coctails</li>
+              <li>Bar B Q</li>
+              <li>Desserts</li>
+            </ul>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-delay="300" class="about-details pt-4">
+          <div class="about-title">
+            Newsletter
+          </div>
+          <div class="newsletter-container">
+            Get recent news and updates.
+            <input type="email" class="newsletter-input" placeholder="Email Address">
+          </div>
+          <button class="newsletter-subscribe-btn">
+            Subscribe
+          </button>
+        </div>
+
+      </div>
+
+      <div class="last-box">
+        <div class="last-details">
+          <div>
+            <strong class="copyright-tag">© 2024 pizza hut</strong> | All shawonetc3 Themes
+          </div>
+          <div class="d-flex w-50 justify-content-around">
+            <a href="#" class="social-links">Facebook</a>
+            <a href="#" class="social-links">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
